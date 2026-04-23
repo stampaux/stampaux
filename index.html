@@ -12,7 +12,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-```
+
 :root {
   --blue:       #6a93b0;
   --blue-light: #a8c4d8;
@@ -38,13 +38,13 @@ body {
 #mini-cd {
   position: fixed; top: 1rem; right: 1.25rem; z-index: 100;
   background: rgba(250,247,242,0.88); backdrop-filter: blur(8px);
-  border: 1px solid var(--blue-light); padding: 0.45rem 0.9rem;
-  display: flex; align-items: baseline; gap: 0.5rem;
+  border: 1px solid var(--blue-light); padding: 0.5rem 0.9rem;
+  display: flex; align-items: baseline; gap: 0.75rem;
   opacity: 0; pointer-events: none; transition: opacity 0.4s; border-radius: 2px;
 }
 #mini-cd.visible { opacity: 1; }
-#mini-cd span { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--text); }
-#mini-cd .mini-label { font-family: 'Jost', sans-serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); align-self: center; }
+#mini-cd span { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--text); }
+#mini-cd .mini-label { font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); align-self: center; }
 
 /* ── HERO ── */
 .hero {
@@ -74,8 +74,8 @@ body {
 .invitation-inner { max-width: 1100px; margin: 0 auto; }
 .invitation-header { text-align: center; margin-bottom: 3rem; }
 .invitation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-.photo-frame { position: relative; width: 100%; overflow: hidden; }
-.photo-frame::before { content: ''; position: absolute; top: -10px; left: -10px; right: 10px; bottom: 10px; border: 1px solid var(--blue-light); pointer-events: none; z-index: 1; }
+.photo-frame { position: relative; width: 110%; overflow: hidden; }
+.photo-frame::before { content: ''; position: absolute; top: -10px; left: -10px; right: 10px; bottom: 10px; pointer-events: none; z-index: 1; }
 .photo-frame img { width: 100%; display: block; aspect-ratio: 4/5; object-fit: cover; object-position: center; }
 .invitation-actions { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
 .invitation-actions .section-label { margin-bottom: 0.5rem; }
@@ -137,7 +137,7 @@ body {
 .donativo-card:hover { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
 .donativo-card-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--blue); }
 .donativo-card-value { font-family: 'Jost', sans-serif; font-size: 0.82rem; letter-spacing: 0.1em; color: var(--text); text-align: center; user-select: all; }
-.donativo-card-hint { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-light); }
+.donativo-card-hint { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-dark); }
 .donativo-card-confirm { font-size: 0.7rem; color: var(--blue); opacity: 0; transition: opacity 0.3s; position: absolute; bottom: 0.5rem; }
 .donativo-card-confirm.show { opacity: 1; }
 @media (max-width: 600px) { .donativo-personas { grid-template-columns: 1fr; } }
@@ -153,7 +153,7 @@ body {
 /* ── FOOTER ── */
 footer { text-align: center; padding: 3rem 2rem; background: var(--ivory); color: var(--blue-light); font-size: 0.75rem; letter-spacing: 0.15em; }
 footer .footer-names { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; font-weight: 300; color: var(--text); margin-bottom: 0.5rem; display: block; }
-```
+
 
   </style>
 </head>
@@ -212,9 +212,7 @@ footer .footer-names { font-family: 'Cormorant Garamond', serif; font-size: 1.8r
     <li class="program-item"><span class="prog-time">13:45</span><span class="prog-event">Aperitivo</span></li>
     <li class="program-item"><span class="prog-time">14:30</span><span class="prog-event">Comida</span></li>
     <li class="program-item"><span class="prog-time">16:30</span><span class="prog-event">Copas</span></li>
-    <li class="program-item"><span class="prog-time">18:00</span><span class="prog-event">Fin de comida y sobremesa</span></li>
-    <li class="program-item"><span class="prog-time">20:00</span><span class="prog-event">Fiesta</span></li>
-    <li class="program-item" style="border-bottom:none"><span class="prog-time">02:00</span><span class="prog-event">Fin Fiesta</span></li>
+    <li class="program-item"><span class="prog-time">18:00</span><span class="prog-event">Fin</span></li>
   </ul>
 </section>
 
@@ -224,7 +222,7 @@ footer .footer-names { font-family: 'Cormorant Garamond', serif; font-size: 1.8r
   <div class="location-inner">
     <p class="section-label">¿A dónde ir?</p>
     <h2 class="section-title">Los lugares</h2>
-    <p class="section-text">Celebraremos nuestra boda en dos lugares muy especiales de Madrid, comenzando en la iglesia y trasladándonos al aperitivo/comida/copas tras la ceremonia. Para los mas animados habrá fiesta después en una ubicación que ya os mandaremos.</p>
+    <p class="section-text">Celebraremos nuestra boda en dos lugares muy especiales de Madrid, comenzando en la iglesia y trasladándonos al restaurante para el aperitivo, comida y copas.</p>
     <div class="venue-grid">
       <div class="venue-card">
         <p class="venue-card-label">Ceremonia · 12:00</p>
@@ -266,13 +264,13 @@ footer .footer-names { font-family: 'Cormorant Garamond', serif; font-size: 1.8r
         <div class="donativo-cards">
           <div class="donativo-card" onclick="copyText(this)">
             <p class="donativo-card-label">Bizum</p>
-            <p class="donativo-card-value">684060569</p> <!-- ← CAMBIAR -->
+            <p class="donativo-card-value">684060569</p> 
             <p class="donativo-card-hint">Pulsa para copiar</p>
             <p class="donativo-card-confirm">¡Copiado!</p>
           </div>
           <div class="donativo-card" onclick="copyText(this)">
             <p class="donativo-card-label">Transferencia</p>
-            <p class="donativo-card-value">ES4921008947480200482971</p> <!-- ← CAMBIAR -->
+            <p class="donativo-card-value">ES4921008947480200482971</p> 
             <p class="donativo-card-hint">Pulsa para copiar</p>
             <p class="donativo-card-confirm">¡Copiado!</p>
           </div>
@@ -285,13 +283,13 @@ footer .footer-names { font-family: 'Cormorant Garamond', serif; font-size: 1.8r
         <div class="donativo-cards">
           <div class="donativo-card" onclick="copyText(this)">
             <p class="donativo-card-label">Bizum</p>
-            <p class="donativo-card-value">618595768</p> <!-- ← CAMBIAR -->
+            <p class="donativo-card-value">618595768</p> 
             <p class="donativo-card-hint">Pulsa para copiar</p>
             <p class="donativo-card-confirm">¡Copiado!</p>
           </div>
           <div class="donativo-card" onclick="copyText(this)">
             <p class="donativo-card-label">Transferencia</p>
-            <p class="donativo-card-value">ES09 2100 2220 1301 0030 5021</p> <!-- ← CAMBIAR -->
+            <p class="donativo-card-value">ES0921002220130100305021</p> 
             <p class="donativo-card-hint">Pulsa para copiar</p>
             <p class="donativo-card-confirm">¡Copiado!</p>
           </div>
